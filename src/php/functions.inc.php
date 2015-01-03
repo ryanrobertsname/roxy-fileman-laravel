@@ -95,7 +95,7 @@ function getErrorRes($str = ''){
 function getFilesPath(){
   $ret = (isset($_SESSION[SESSION_PATH_KEY]) && $_SESSION[SESSION_PATH_KEY] != ''?$_SESSION[SESSION_PATH_KEY]:FILES_ROOT);
   if(!$ret){
-    $ret = RoxyFile::FixPath(public_path().\Config::get('roxy-fileman-laravel::assets_uri').'/Uploads');
+    $ret = RoxyFile::FixPath(public_path().\Config::get('roxy-fileman-laravel::assets_uri').'/uploads');
     $ret = str_replace(RoxyFile::FixPath($_SERVER['DOCUMENT_ROOT']), '', $ret);
   }
   return $ret;
